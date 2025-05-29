@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<br />
+<h2 align="center" style="font-size: 70px"><i><b>Clean Energy Portal</b></i></h2>
+<br />
+<br />
+<p style="text-align: center ; margin-top: -30px; text-decoration-line: underline; font-size: 20px;">Your choice, future of everyone.</p>
+            
+<br>
+
+<div id="pictures">
+
+    <a asp-area="" asp-page="/Solarpanels" title="Solar Panels"><img id="images" src="images/solarpanels.jpg"/></a>
+    <a asp-area="" asp-page="/Windturbines" title="Wind Turbines"><img id="images" src="images/homewindturbine.jpg"/></a>
+    <a asp-area="" asp-page="/Waterpanels" title="Water Panels"><img id="images" src="images/solar water panels.jpg"/></a>
+</div>
+<br>
+<div id="pictures">
+
+     <a asp-area="" asp-page="/Electriccar" title="Electric Cars"><img id="images" src="images/electriccar.jpg"/></a>
+     <a asp-area="" asp-page="/Fenceturbines" title="Fence Turbines"><img id="images" src="images/fence.jpg"/></a>
+     <a asp-area="" asp-page="/Riverturbines" title="River Turbines"><img id="images" src="images/riverturbine.jpg"/></a>
+</div>

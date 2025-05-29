@@ -1,0 +1,41 @@
+﻿@page
+@model CleanEnergy.Pages.CalculatorModel
+@{
+    ViewData["Title"] = "Calculator page";
+}
+
+<br />
+<h2 align="center" style="font-size: 70px"><i><b>Clean Energy Portal</b></i></h2>
+<br />       
+<p>This calculator will provide you with possible energy generator for given size area for solar panels.</p>
+<p>It is calculating with this formula:  E = A * r * H * PR, E = Energy (kWh), A = Total solar panel Area (m2), r = solar panel </p>
+<p>yield or efficiency(%) (we take 15.7%)(the solar panel yield of a PV module of 250 Wp with an area of 1.6 m2 is 15.6%),  </p>
+<p>H = Annual average solar radiation on tilted panels (shadings not included)(for Ireland average is 970KWh/m2), PR = Performance ratio, </p>
+<p>coefficient for losses (range between 0.5 and 0.9, default value we take = 0.82)</p>
+<p>Bear in mind that is average and my vary, depend on type of solar panels and their efficiency.</p>
+
+<h2>Calculation form</h2>
+
+@if (Model.hasData)
+{
+    Double.TryParse(Model.size, out double sizex);
+    double result = ((sizex * 0.157 * 970 * 0.82) * 100) / 100;
+    <p>Expected Energy Generation: @result KWh per year.</p>
+}
+
+<div class=container>
+    <form method="post">
+        <label for="fname">First Name</label><br />
+        <input type="text" id="fname" name="firstname" autofocus required class="form-control input-group" style="width: 300px"/><br />
+
+        <label for="lname">Last Name</label><br />
+        <input type="text" id="lname" name="lastname" required class="form-control input-group" style="width: 300px"/><br />
+
+        <label for="sm">Size of solar panels in m2</label><br />
+        <input type="number" id="size" name="size" required class="form-control input-group" style="width: 300px"/><br /><br />
+
+        <input type="submit" value="Submit" class="btn btn-info"/>
+    </form>
+</div>
+
+

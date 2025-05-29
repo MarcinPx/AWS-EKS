@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CleanEnergy</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CleanEnergy.styles.css" asp-append-version="true" />
+<style>
+.mynav_nav {
+    
+    overflow: hidden;
+    background-color: #333;
+    box-shadow: 20px 20px 10px #888888;
+    margin: 0;
+    padding: 0;
+}
+  
+.mynav_nav a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.mynav_nav a:hover, .mynav_dropdown:hover .mynav_dropbtn {
+    background-color: #4d4d4d;
+}
+
+
+
+.mynav_dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.mynav_dropdown .mynav_dropbtn {
+    
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.mynav_dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.mynav_dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.mynav_dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.mynav_dropdown:hover .mynav_dropdown-content {
+    display: block;
+}
+.my_footer {
+	list-style-type: none;
+	background-color: #333;
+	overflow: hidden;
+	position: fixed;
+	bottom: 0;
+	color: white;
+	text-align: center;
+	height: 50px;
+	width: 100%;
+	
+}
+#pictures {
+    display: block;
+	width: 90%;
+	height: 100%;
+	object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 110px;
+    
+}
+
+#images {
+    width: 30%;
+    
+    border: solid #333;
+    
+}
+
+#images:hover {
+    transform: scale(1.15);
+}
+
+
+h3 {
+    text-align: center;
+    font-size: 30px;
+}
+
+#links:hover {
+    background-color: #33A8FF;
+}
+</style>
+
+</head>
+<body>
+    <header>
+        
+        <div class="mynav_nav">
+					
+           <a class="nav-link text-white" asp-area="" asp-page="/Index">Home</a>
+           <a class="nav-link text-white" asp-area="" asp-page="/About">About</a>
+		   <a class="nav-link text-white" asp-area="" asp-page="/Contact">Contact</a>
+           <a class="nav-link text-white" asp-area="" asp-page="/Calculator">Calculator</a>
+		   <div class="mynav_dropdown">
+                                
+                <button class="mynav_dropbtn">Technologys</button>
+                <div class="mynav_dropdown-content">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Solarpanels">Solar Panels</a>
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Windturbines">Wind Turbines</a>
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Waterpanels">Water Panels</a>
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Electriccar">Electric Cars</a>
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Fenceturbines">Fence Turbines</a>
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Riverturbines">River Turbines</a>
+                </div>
+           </div>
+           <a class="nav-link text-white" asp-area="" asp-page="/Records">Records</a>           
+					
+					
+		</div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+			
+			<div class="my_footer">
+				<p>All rights reserved. &copy; Clean Energy Portal 2022</p>
+			</div>
+		
+	</footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
