@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: cleanenergy
+    app.kubernetes.io/instance: cleanenergy-instance
+    app.kubernetes.io/version: "1.0.0"
+    app.kubernetes.io/managen-by: kubectl
+  name: cleanenergy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cleanenergy
+  template:
+    metadata:
+      labels:
+        app: cleanenergy
+    spec:
+      containers:
+        - image: 953941695125.dkr.ecr.us-east-1.amazonaws.com/cleanenergycontainer:latest
+          imagePullPolicy: Always
+          name: cleanenergy
+          resources:
+            requests:
+              cpu: "250m"
+            limits:
+              cpu: "500"
+
+          ports:
+            - containerPort: 80
+         
+          
